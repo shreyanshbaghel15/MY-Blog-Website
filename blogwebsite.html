@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        function login() {
+            var userId = prompt("Please enter your user ID:");
+            var password = prompt("Please enter your password:");
+            
+            // Here you would typically send the userId and password to a server for authentication
+            // For demonstration purposes, we'll just show an alert
+            alert("Login attempt with User ID: " + userId);
+        }
+    </script><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-image: url('https://media.istockphoto.com/id/1212912117/photo/3d-abstracts-background-stock-photo.jpg?s=2048x2048&w=is&k=20&c=9QDZM-XdRlS6lu0iI5iX3tT96ajyehTDrziVj84XlvI=');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .article {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .comment-section {
+            margin-top: 20px;
+        }
+        .comment {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head></head>
+<body>
+    <header>
+        <h1>My Blog Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">🏠 Home</a></li>
+            <li><a href="#articles">📰 Articles</a></li>
+            <li><a href="#login">🔑 Login</a></li>
+            <li><a href="#register">📝 Register</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="article">
+            <h2>The Akrasia Effect: Why We Don’t Follow Through on What We Set Out to Do and What to Do About It</h2>
+            <p>This article shares the story of the famous author, Victor Hugo, and the totally-strange-but-somehow-effective strategy he used to overcome his chronic procrastination. Throughout the post, I weave in some interesting scientific insights about why we procrastinate and what we can do about it.</p>
+        </div>
+        <div class="comment-section">
+            <h3>Comments</h3>
+            <div class="comment">
+                <p><strong>User1:</strong> Great article! Thanks for sharing.</p>
+            </div>
+            <div class="comment">
+                <p><strong>User2:</strong> I found this very informative. Looking forward to more content like this.</p>
+            </div>
+        </div>
+        <form id="comment-form">
+            <h3>Add a Comment</h3>
+            <input type="text" id="username" placeholder="Your Name" required>
+            <textarea id="comment-text" placeholder="Your Comment" required></textarea>
+            <input type="submit" value="Post Comment">
+        </form>
+    </div>
+    <script>
+        document.getElementById('comment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const commentText = document.getElementById('comment-text').value;
+            
+            const commentSection = document.querySelector('.comment-section');
+            const newComment = document.createElement('div');
+            newComment.className = 'comment';
+            newComment.innerHTML = `<p><strong>${username}:</strong> ${commentText}</p>`;
+            commentSection.appendChild(newComment);
+            
+            document.getElementById('username').value = '';
+            document.getElementById('comment-text').value = '';
+        });
+    </script>
+</body>
+</html>
